@@ -1,4 +1,4 @@
-# Rembg
+# Rembg - CPU-olny version
 
 [![Downloads](https://pepy.tech/badge/rembg)](https://pepy.tech/project/rembg)
 [![Downloads](https://pepy.tech/badge/rembg/month)](https://pepy.tech/project/rembg/month)
@@ -41,11 +41,6 @@ Rembg is a tool to remove images background. That is it.
 CPU support:
 ```bash
 pip install rembg
-```
-
-GPU support:
-```bash
-pip install rembg[gpu]
 ```
 
 ### Usage as a cli
@@ -127,7 +122,7 @@ output = remove(input)
 cv2.imwrite(output_path, output)
 ```
 
-### Usage as a docker
+## Usage as a docker (main use case)
 
 First compile with:
 
@@ -135,10 +130,10 @@ First compile with:
 docker build . -t rembg
 ```
 
-Then run with:
+**Then run with:**
 
 ```
-docker run --rm -i rembg i in.png out.png
+docker run --rm -v $(pwd):/f -i rembg i /f/in.png /f/out.png
 ```
 
 ### Advance usage

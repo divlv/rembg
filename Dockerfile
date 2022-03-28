@@ -11,7 +11,8 @@ WORKDIR /rembg
 
 COPY . .
 
-RUN ["pip3", "install", ".[gpu]"]
+# Installing CPU version only!
+RUN ["pip3", "install", "rembg"]
 
 ENTRYPOINT ["rembg"]
 CMD []
